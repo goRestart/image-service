@@ -4,6 +4,9 @@
 	"env": {},
 	"formation": {},
 	"addons": [
+		{
+			"plan": "heroku-postgresql"
+		}
 	],
 	"environments": {},
 	"buildpacks": [
