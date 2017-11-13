@@ -8,6 +8,9 @@ extension Assembly {
   }
   
   private var uploadController: UploadController {
-    return UploadController()
+    return UploadController(
+      uploadImage: uploadImage,
+      imageViewMapper: imageViewMapper
+    )
   }
 }
