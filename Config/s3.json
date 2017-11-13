@@ -1,0 +1,6 @@
+{
+  "accessKey": "$AMAZON_ACCESS_KEY",
+  "secretKey": "$AMAZON_SECRET_KEY",
+  "bucket": "$AMAZON_BUCKET",
+  "region": "$AMAZON_REGION"
+}
