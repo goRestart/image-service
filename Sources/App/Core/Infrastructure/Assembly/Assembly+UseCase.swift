@@ -6,4 +6,10 @@ extension Assembly {
       imageRepository: imageRepository
     )
   }
+  
+  var getImagesByIds: GetImagesByIds {
+    return GetImagesByIds(
+      imageRepository: imageRepository
+    )
+  }
 }

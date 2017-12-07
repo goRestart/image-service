@@ -1,5 +1,6 @@
 import HTTP
 import CoreService
+import Foundation
 
 struct UploadController {
   
