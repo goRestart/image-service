@@ -18,13 +18,4 @@ struct UploadController {
       .execute(with: content)
       .makeResponse(status: .created)
   }
-  
-  func list(with request: Request) throws -> ResponseRepresentable {
-    do {
-      let imageIds = try request.extract()
-      return try imageIds.makeResponse()
-    } catch ImageIdError.missingParameters {
-      return Response.missingParameters
-    }
-  }
 }
