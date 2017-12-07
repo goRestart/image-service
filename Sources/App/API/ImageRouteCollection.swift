@@ -8,9 +8,13 @@ private struct Endpoint {
 struct ImageRouteCollection: RouteCollection {
   
   private let uploadController: UploadController
+  private let imageController: ImageController
   
-  init(uploadController: UploadController) {
+  init(uploadController: UploadController,
+       imageController: ImageController)
+  {
     self.uploadController = uploadController
+    self.imageController = imageController
   }
   
   func build(_ builder: RouteBuilder) throws {
@@ -18,7 +22,7 @@ struct ImageRouteCollection: RouteCollection {
       return try self.uploadController.upload(with: request)
     }
     builder.get(Endpoint.list) { request in
-      return try self.uploadController.list(with: request)
+      return try self.imageController.list(with: request)
     }
   }
 }
