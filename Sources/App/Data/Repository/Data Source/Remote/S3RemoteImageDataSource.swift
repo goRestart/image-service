@@ -19,7 +19,7 @@ struct S3RemoteImageDataSource: RemoteImageDataSource {
     let response = try s3.put(content, destinationPath: destination, acl: .publicRead)
     
     return Image(
-      identifier: imageId,
+      id: imageId,
       url: response.url,
       storageUrl: response.s3Url
     )
