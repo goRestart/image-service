@@ -1,4 +1,5 @@
 import Foundation
+import CoreService
 
 struct ImageRepository {
   
@@ -16,5 +17,9 @@ struct ImageRepository {
     let image = try remoteDataSource.store(content)
     try diskDataSource.store(image)
     return image
+  }
+  
+  func get(with ids: [Identifier<Image>]) throws -> [Image] {
+    return try diskDataSource.get(with: ids)
   }
 }
