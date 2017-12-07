@@ -6,5 +6,5 @@ protocol RemoteImageDataSource {
 
 protocol ImageDataSource {
   func store(_ image: Image) throws
-  func get(with ids: [Identifier<Image>]) -> [Image]
+  func get(with ids: [Identifier<Image>]) throws -> [Image]
 }
