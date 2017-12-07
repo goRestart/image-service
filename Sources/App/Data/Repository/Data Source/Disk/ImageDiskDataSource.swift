@@ -1,7 +1,8 @@
 import Foundation
+import CoreService
 
 struct ImageDiskDataSource: ImageDataSource {
-  
+
   private let saveImageTask: SaveImageTask
   
   init(saveImageTask: SaveImageTask) {
@@ -10,5 +11,9 @@ struct ImageDiskDataSource: ImageDataSource {
   
   func store(_ image: Image) throws {
     try saveImageTask.execute(with: image)
+  }
+  
+  func get(with ids: [Identifier<Image>]) -> [Image] {
+    return []
   }
 }
