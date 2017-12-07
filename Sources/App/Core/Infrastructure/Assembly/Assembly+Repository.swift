@@ -2,7 +2,6 @@ import CoreService
 import S3
 
 extension Assembly {
-  
   var imageRepository: ImageRepository {
     return ImageRepository(
       remoteDataSource: s3RemoteImageDataSource,
@@ -28,11 +27,20 @@ extension Assembly {
   
   private var diskImageDataSource: ImageDataSource {
     return ImageDiskDataSource(
-      saveImageTask: saveImageTask
+      saveImageTask: saveImageTask,
+      getImagesByIdsTask: getImagesByIdsTask
     )
   }
   
+  // MARK: - Tasks
+  
   private var saveImageTask: SaveImageTask {
     return SaveImageTask()
+  }
+  
+  private var getImagesByIdsTask: GetImagesByIdsTask {
+    return GetImagesByIdsTask(
+      imageMapper: imageMapper
+    )
   }
 }
